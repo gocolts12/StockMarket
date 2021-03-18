@@ -1,0 +1,14 @@
+﻿  Investor.cpp
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(20,10): error C2039: 'push_back': is not a member of 'std::map<Stock,int,std::less<Stock>,std::allocator<std::pair<const Stock,int>>>'
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(12): message : see declaration of 'std::map<Stock,int,std::less<Stock>,std::allocator<std::pair<const Stock,int>>>'
+  main.cpp
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(12,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(12,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(12,24): error C2238: unexpected token(s) preceding ';'
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(20,3): error C2065: 'stocks': undeclared identifier
+  StockMarket.cpp
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(12,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(12,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(12,24): error C2238: unexpected token(s) preceding ';'
+C:\Users\Michael\Desktop\Programming\Stonks\stonks\stonks\StockMarket.cpp(20,3): error C2065: 'stocks': undeclared identifier
+  Generating Code...
