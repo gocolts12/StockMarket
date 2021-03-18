@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 
@@ -19,6 +20,10 @@ public:
 		numberOfShares = i;
 	}
 
+	double getPrice()
+	{
+		return stockPrice;
+	}
 
 
 };

@@ -41,14 +41,11 @@ public:
 			}
 			return true;
 		}
-		else
-		{
 			cout << "Order failed" << endl;
 			return false;
-		}
 	}
 
-	sendSellOrder(Stock s, int numberOfShares)
+	bool sendSellOrder(Stock s, int numberOfShares)
 	{
 		if (stockMarket->sellOrder(s, numberOfShares));
 		{
@@ -61,13 +58,11 @@ public:
 			{
 				portfolio[s] += numberOfShares;
 			}
+			cout << "Order successful" << endl;
 			return true;
 		}
-		else
-		{
 			cout << "Order failed" << endl;
 			return false;
-		}
 	}
 
 };

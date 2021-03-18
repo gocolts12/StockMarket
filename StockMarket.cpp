@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,10 +13,6 @@ private:
 
 public:
 
-	StockMarket()
-	{
-
-	}
 
 	bool createStock(string stockName, double stockPrice, int numberOfShares)
 	{
@@ -28,7 +25,7 @@ public:
 
 	}
 	
-	bool sellOrder()
+	bool sellOrder(Stock s, int numberOfShares)
 	{
 
 	}
