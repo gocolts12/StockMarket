@@ -9,15 +9,13 @@ class Stock
 private:
 	string stockName;
 	double stockPrice;
-	int numberOfShares;
 
 public:
 
-	Stock(string n, double p, int i)
+	Stock(string n, double p)
 	{
 		stockName = n;
 		stockPrice = p;
-		numberOfShares = i;
 	}
 
 	double getPrice()
@@ -25,5 +23,9 @@ public:
 		return stockPrice;
 	}
 
+	void updatePrice(double newPrice)
+	{
+		stockPrice = newPrice;
+	}
 
 };

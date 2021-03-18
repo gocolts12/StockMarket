@@ -23,5 +23,9 @@ int main()
 	Stock s2("Oshane Xmines", 3.0, 150);
 	Stock s3("Russell Wilson", 15.0, 50);
 
+	market->addStock(s1);
+	market->addStock(s2);
+	market->addStock(s3);
+
 
 }

@@ -28,41 +28,55 @@ public:
 
 	bool sendBuyOrder(Stock s, int numberOfShares)
 	{
-		if (stockMarket->buyOrder(s, numberOfShares));
+		//If we don't have the funds for the trade
+		if (s.getPrice() * numberOfShares > availableFunds)
 		{
-			availableFunds -= s.getPrice() * numberOfShares;
-			if (portfolio.find(s) == portfolio.end())
-			{
-				portfolio.emplace(make_pair(s, numberOfShares));
-			}
-			else 
-			{
-				portfolio[s] += numberOfShares;
-			}
-			return true;
-		}
 			cout << "Order failed" << endl;
 			return false;
+		}
+
+		//Confirm that the market could execute your trade
+		//The market will print the error reason
+		if (!stockMarket->buyOrder(s, numberOfShares)) return false;
+
+		availableFunds -= s.getPrice() * numberOfShares;
+		if (portfolio.find(s) == portfolio.end())
+		{
+			portfolio.emplace(make_pair(s, numberOfShares));
+		}
+		else 
+		{
+			portfolio[s] += numberOfShares;
+		}
+		return true;
+
 	}
 
 	bool sendSellOrder(Stock s, int numberOfShares)
 	{
-		if (stockMarket->sellOrder(s, numberOfShares));
+		//If we don't own the stock
+		if (portfolio.find(s) == portfolio.end())
 		{
-			availableFunds -= s.getPrice() * numberOfShares;
-			if (portfolio.find(s) == portfolio.end())
-			{
-				portfolio.emplace(make_pair(s, numberOfShares));
-			}
-			else
-			{
-				portfolio[s] += numberOfShares;
-			}
-			cout << "Order successful" << endl;
-			return true;
-		}
-			cout << "Order failed" << endl;
+			cout << "You don't own this stock, order failed" << endl;
 			return false;
+		}
+		//If we don't own enough shares of the stock
+		if (numberOfShares > portfolio[s])
+		{
+			cout << "Order failed, you don't own enough shares" << endl;
+			return false;
+		}
+
+		//Confirm that the market could execute your trade
+		//The market will print the error reason
+		if (!stockMarket->sellOrder(s, numberOfShares)) return false;
+
+
+		availableFunds += s.getPrice() * numberOfShares;
+		portfolio[s] -= numberOfShares;
+
+		cout << "Order successful" << endl;
+		return true;
 	}
 
 };
