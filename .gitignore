@@ -2,4 +2,5 @@
 stonks.sln
 *.vcsproj
 /.vs
-
+/stonks/x64
+/stonks/stonks.*
