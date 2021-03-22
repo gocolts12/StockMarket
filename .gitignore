@@ -1,6 +1,6 @@
-/x64
+/x64/*
 stonks.sln
 *.vcsproj
 /.vs
-/stonks/x64
+/stonks/x64/*
 /stonks/stonks.*

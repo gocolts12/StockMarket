@@ -1,31 +1,33 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Stock.h"
 
 using namespace std;
 
-class Stock
+
+Stock::Stock(string n, double p)
 {
-private:
-	string stockName;
-	double stockPrice;
+	stockName = n;
+	stockPrice = p;
+}
 
-public:
+double Stock::getPrice()
+{
+	return stockPrice;
+}
 
-	Stock(string n, double p)
-	{
-		stockName = n;
-		stockPrice = p;
-	}
+void Stock::updatePrice(double newPrice)
+{
+	stockPrice = newPrice;
+}
 
-	double getPrice()
-	{
-		return stockPrice;
-	}
+string const Stock::getStockName() const
+{
+	return stockName;
+}
 
-	void updatePrice(double newPrice)
-	{
-		stockPrice = newPrice;
-	}
-
-};
+bool Stock::operator<(const Stock& s)const
+{
+	return this->stockName < s.getStockName();
+}
