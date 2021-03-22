@@ -4,3 +4,5 @@ stonks.sln
 /.vs
 /stonks/x64/*
 /stonks/stonks.*
+/out
+/build/*
