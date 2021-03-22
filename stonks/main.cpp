@@ -2,9 +2,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "StockMarket.cpp"
-#include "Stock.cpp"
-#include "Investor.cpp"
+#include "StockMarket.h"
+#include "Stock.h"
+#include "Investor.h"
 
 
 
@@ -14,18 +14,21 @@ int main()
 {
 
 	StockMarket* market = new StockMarket;
-	Investor a("Steve", market);
-	Investor b("Emily", market);
-	Investor c("Mikey", market);
+	Investor steve("Steve", market);
+	Investor emily("Emily", market);
+	Investor mikey("Mikey", market);
+	
+	Stock carson = market->createStock("Carson Wentz", 7.0, 500);
+	Stock xmines = market->createStock("Oshane Xmines", 3.0, 750);
+	Stock russ = market->createStock("Russell Wilson", 15.0, 250);
 
 
-	Stock s1("Carson Wentz", 7.0, 100);
-	Stock s2("Oshane Xmines", 3.0, 150);
-	Stock s3("Russell Wilson", 15.0, 50);
+	steve.sendBuyOrder(xmines, 32);
+	steve.depositFunds(1000000);
+	steve.sendBuyOrder(xmines, 751);
+	steve.sendBuyOrder(xmines, 32);
 
-	market->addStock(s1);
-	market->addStock(s2);
-	market->addStock(s3);
-
+	emily.depositFunds(1000000);
+	emily.sendBuyOrder(xmines, 32);
 
 }
